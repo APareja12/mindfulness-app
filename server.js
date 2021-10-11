@@ -6,6 +6,7 @@ const app = express();
 const indexController = require('./controllers/index');
 const meditationController = require('./controllers/meditations.js');
 const usersController = require('./controllers/users');
+const expressSession = require('express-session');
 require('dotenv').config();
 
 

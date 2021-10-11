@@ -1,5 +1,6 @@
 const express = require('express');
-const userRouter = express.Router();
+const router = express.Router();
+const bcrypt = require('bcrypt');
 const User = require("../models/user")
 
 router.get('/users/delete', async (req, res) => {
@@ -76,4 +77,4 @@ function isAuthenticated(req, res, next) {
 // INDUCES
 
 
-module.exports = userRouter;
+module.exports = router;
