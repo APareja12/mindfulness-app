@@ -2,19 +2,6 @@ const express = require('express');
 const meditateRouter = express.Router();
 const Meditation = require("../models/tracker")
 
-// let curday = function(sp){
-    //     today = new Date();
-    //     let dd = today.getDate();
-    //     let mm = today.getMonth()+1; //As January is 0.
-    //     let yyyy = today.getFullYear();
-    
-    //     if(dd<10) dd='0'+dd;
-    //     if(mm<10) mm='0'+mm;
-    //     return (mm+sp+dd+sp+yyyy);
-    //     };
-    //     console.log(curday('/'));
-    //     console.log(curday('-'));
-    
     
     // Index Route
     meditateRouter.get('/', (req, res) => { 
@@ -52,10 +39,13 @@ Meditation.findByIdAndUpdate(
 });
 
 // Create
+meditateRouter.get('/history', (req, res) => {
+    res.render('history.ejs')
+})
 
-meditateRouter.post('/add', (req, res) => {
-        Meditation.create(meditationInfo);
-    res.redirect('/history');
+meditateRouter.post('/', (req, res) => {
+        Meditation.create(req.body);
+    res.redirect('/session/history');
 })
 
 // Edit    

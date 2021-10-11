@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="/skeleton.css" />
+    <link rel="stylesheet" href="/style.css">
     <title>Login</title>
 </head>
 <body>
@@ -12,7 +15,7 @@
         <p style="color: red;"><%= error %></p>
     <% } %>
     <p>Please Enter Your Credentials To Login</p>
-    <form action="/login" method="POST" autocomplete="off">
+    <form action="/users/login" method="POST" autocomplete="off">
         <label>Username:
             <input type="text" name="username" required>
         </label><br>

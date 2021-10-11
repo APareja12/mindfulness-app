@@ -39,6 +39,7 @@ app.use('/session', meditationController);
 app.use('/', indexController);
 app.use('/users', usersController);
 
+
 app.listen(PORT, () => {
     console.log(`Life cannot be known by the mind:${PORT}`)
 });
