@@ -21,7 +21,7 @@ const Meditation = require("../models/tracker")
     const event = {
         date: new Date()}
 
-    res.render('home.ejs', {
+    res.render('portal.ejs', {
         event
     })
 });
