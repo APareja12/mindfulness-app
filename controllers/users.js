@@ -3,17 +3,17 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require("../models/user")
 
-router.get('/users/delete', async (req, res) => {
+router.get('/delete', async (req, res) => {
     await User.deleteMany({});
     res.redirect('/');
 });
 
-// present user with login page
+
 router.get('/login', (req, res) => {
     res.render('login.ejs', { error: '' });
 });
 
-// handle form submission to login
+
 router.post('/login', (req, res) => {
     User.findOne({ username: req.body.username }, (err, foundUser) => {
 
@@ -29,11 +29,11 @@ router.post('/login', (req, res) => {
 
         req.session.user = foundUser._id;
 
-        res.redirect('/dashboard')
+        res.redirect('/session')
     });
 });
 
-// present user with signup page
+
 router.get('/signup', (req, res) => {
     res.render('signup.ejs');
 });
@@ -46,7 +46,7 @@ router.post('/signup', (req, res) => {
   User.create(req.body, (err, user) => {
       // 4) login with a session and then send the user a dashboard
       req.session.user = user._id
-      res.redirect('/dashboard');
+      res.redirect('/session');
   });
 });
 
@@ -57,9 +57,9 @@ router.get('/logout', (req, res) => {
 });
 
 // Protected Route
-router.get('/dashboard', isAuthenticated, (req, res) => {
+router.get('/session', isAuthenticated, (req, res) => {
     User.findById(req.session.user, (err, user) => {
-        res.render('dashboard.ejs', { user });
+        res.render('session.ejs', { user });
     });
 });
 
@@ -74,7 +74,7 @@ function isAuthenticated(req, res, next) {
 }
 
 
-// INDUCES
+
 
 
 module.exports = router;

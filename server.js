@@ -4,9 +4,8 @@ const morgan = require('morgan');
 const session = require("express-session")
 const app = express();
 const indexController = require('./controllers/index');
-const meditationController = require('./controllers/meditations.js');
+const meditationController = require('./controllers/meditations');
 const usersController = require('./controllers/users');
-const expressSession = require('express-session');
 require('dotenv').config();
 
 
@@ -30,15 +29,15 @@ db.on('error', (error) => {
 app.use(morgan('dev'));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false}));
-app.use(expressSession({
+app.use(session({
     secret: 'cknlkclnclnen', // this is used to digitally sign our session cookies (prevents forgery)
     resave: false, 
     saveUninitialized: false 
 }));
 
-app.use('/', meditationController);
+app.use('/session', meditationController);
 app.use('/', indexController);
-app.use('/', usersController);
+app.use('/users', usersController);
 
 app.listen(PORT, () => {
     console.log(`Life cannot be known by the mind:${PORT}`)

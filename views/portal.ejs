@@ -10,12 +10,13 @@
     <header>
         <h1>Manas Meditation App</h1>
         <nav>
-            <% if(User){ %>
+            <% if(user) { %>
                 <a href="/logout">Logout</a>
-            <% } else { %>
+                <% } else { %>
                 <a href="/login">Login</a>
                 <a href="/signup">Signup</a>
-            <% } %>
+                <% } %>
+           
         </nav>
     </header>
 </body>

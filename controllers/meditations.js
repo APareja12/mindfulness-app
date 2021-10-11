@@ -21,7 +21,7 @@ const Meditation = require("../models/tracker")
     const event = {
         date: new Date()}
 
-    res.render('portal.ejs', {
+    res.render('session.ejs', {
         event
     })
 });
@@ -40,13 +40,13 @@ meditateRouter.delete("/:id", (req, res) => {
  });
 
 // Update Route 
-meditateRouter.put('/products/:id', (req, res) => {
+meditateRouter.put('/update/:id', (req, res) => {
 Meditation.findByIdAndUpdate(
   req.params.id,
   req.body,
   { new: true },
   (error, updateProduct) => {
-    res.redirect(`/products/${req.params.id}`);
+    res.redirect(`/session/update/${req.params.id}`);
   }
 );
 });
