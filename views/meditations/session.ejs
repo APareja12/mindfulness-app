@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="/skeleton.css" />
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Manas</h1>
+    <h2>Your Daily Dose Of NOW</h2>
+    <%=event.date%>
+    <div>
+        <form action="/session" method="post">
+        Name:<input type="text" name="name"><br>
+        Date:<input type="text" name="date"><br>
+        Duration:<input type="text" name="duration"><br>
+        Type Of Meditation:  
+        <select name="typeOfMeditation">
+            <option value="Zen">Zen</option>
+            <option value="Vipassana">Vipasaana</option>
+            <option value="Kundalini">Kundalini</option>
+            <option value="Visualization">Visualization</option>
+        </select>  
+        <br>
+        Intention:<input type="text" name="intention"><br>
+        Setting:<input type="text" name="setting"><br>
+        <input type="submit"> <button action="/session/new">New Session</button>
+        </form>
+    </div>
+    <div>
+        <button type="button" onclick="start('Hello World!')">Start</button>
+        <button type="button" onclick="start('Hello World!')">Stop</button>
+
+    </div>
+</body>
+</html>

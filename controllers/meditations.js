@@ -7,14 +7,18 @@ const Meditation = require("../models/tracker")
     meditateRouter.get('/', (req, res) => { 
     const event = {
         date: new Date()}
-         res.render('meditations/new.ejs', {
+         res.render('meditations/session.ejs', {
         event
     })
 });
 
 // New Route
 meditateRouter.get('/new', (req, res) => {
-    res.render('meditations/new.ejs');
+    const event = {
+        date: new Date()}
+         res.render('meditations/new.ejs', {
+        event
+    })
 });
 
 // Delete Route
@@ -56,17 +60,17 @@ meditateRouter.post('/', (req, res) => {
 // Edit    
 meditateRouter.get("/:id/edit", (req, res) => {
     console.log(req.params.id)
-    Meditation.findById(req.params.id, (error, foundMeditation) => {
-        res.render("edit.ejs", {foundMeditation});
+    Meditation.findById(req.params.id, (err, meditations) => {
+        res.render("edit.ejs", {meditations});
     });
 });
     
 
 // SHOW
 meditateRouter.get('/:id', (req, res) => {
-    Meditation.findById(req.params.id, (error, foundMeditation) => {
+    Meditation.findById(req.params.id, (err, meditations) => {
     res.render('show.ejs', { 
-    foundMeditation, 
+    meditations, 
     index:[req.params.id],
     });
 });
