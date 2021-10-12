@@ -25,18 +25,18 @@ meditateRouter.get('/new', (req, res) => {
 meditateRouter.delete("/:id", (req, res) => {
     Meditation.findByIdAndDelete(req.params.id, (err, deletedMeditation) => {
         
-        res.redirect('/')
+        res.redirect('/session/history')
     });
  });
 
 // Update Route 
-meditateRouter.put('/update/:id', (req, res) => {
+meditateRouter.put('/:id', (req, res) => {
 Meditation.findByIdAndUpdate(
   req.params.id,
   req.body,
   { new: true },
   (error, updateProduct) => {
-    res.redirect(`/session/update/${req.params.id}`);
+    res.redirect('/session/history');
   }
 );
 });
@@ -59,9 +59,8 @@ meditateRouter.post('/', (req, res) => {
 
 // Edit    
 meditateRouter.get("/:id/edit", (req, res) => {
-    console.log(req.params.id)
-    Meditation.findById(req.params.id, (err, meditations) => {
-        res.render("edit.ejs", {meditations});
+    Meditation.findById(req.params.id, (err, meditation) => {
+        res.render("edit.ejs", {meditation});
     });
 });
     

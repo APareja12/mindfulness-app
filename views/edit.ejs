@@ -10,6 +10,22 @@
     <title>Document</title>
 </head>
 <body>
+    <form action="/session/<%=meditation._id%>/edit?_method=PUT" method="post">
+        Name:<input type="text" name="name" placeholder="<%= meditation.name %>"><br>
+        Date:<input type="text" name="date" placeholder="<%= meditation.date %>"><br>
+        Duration:<input type="text" name="duration" placeholder="<%= meditation.duration %>"><br>
+        Type Of Meditation:  
+        <select name="typeOfMeditation" placeholder="<%= meditation.typeOfMeditation %>">
+            <option value="Zen">Zen</option>
+            <option value="Vipassana">Vipasaana</option>
+            <option value="Kundalini">Kundalini</option>
+            <option value="Visualization">Visualization</option>
+        </select>  
+        <br>
+        Intention:<input type="text" name="intention" placeholder="<%= meditation.intention %>"><br>
+        Setting:<input type="text" name="setting" placeholder="<%= meditation.setting %>"><br>
+        <input type="submit" value="Submit"> <button action="/session/new">New Session</button>
+        </form>
     
 </body>
 </html>

@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const session = require("express-session")
 const app = express();
+const methodOverride = require("method-override")
 const indexController = require('./controllers/index');
 const meditationController = require('./controllers/meditations');
 const usersController = require('./controllers/users');
@@ -34,7 +35,7 @@ app.use(session({
     resave: false, 
     saveUninitialized: false 
 }));
-
+app.use(methodOverride("_method"))
 app.use('/session', meditationController);
 app.use('/', indexController);
 app.use('/users', usersController);
