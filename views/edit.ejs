@@ -10,7 +10,8 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/session/<%=meditation._id%>/edit?_method=PUT" method="post">
+    <h1>Edit Session</h1>
+    <form action="/session/<%=meditation._id%>?_method=PUT" method="POST">
         Name:<input type="text" name="name" placeholder="<%= meditation.name %>"><br>
         Date:<input type="text" name="date" placeholder="<%= meditation.date %>"><br>
         Duration:<input type="text" name="duration" placeholder="<%= meditation.duration %>"><br>

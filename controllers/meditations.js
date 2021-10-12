@@ -30,13 +30,13 @@ meditateRouter.delete("/:id", (req, res) => {
  });
 
 // Update Route 
-meditateRouter.put('/:id', (req, res) => {
+meditateRouter.put('/history/:id', (req, res) => {
 Meditation.findByIdAndUpdate(
   req.params.id,
   req.body,
   { new: true },
   (error, updateProduct) => {
-    res.redirect('/session/history');
+    res.redirect(`/session/history/${req.params.id}`);
   }
 );
 });
