@@ -29,7 +29,7 @@ router.post('/login', (req, res) => {
 
         req.session.user = foundUser._id;
 
-        res.redirect('/session')
+        res.redirect('/session/new')
     });
 });
 
