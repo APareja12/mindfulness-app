@@ -36,16 +36,17 @@ Meditation.findByIdAndUpdate(
   req.body,
   { new: true },
   (error, updateProduct) => {
-    res.redirect(`/session/history/${req.params.id}`);
+    res.redirect(`/session/${req.params.id}`);
   }
 );
 });
 
 // Create
 meditateRouter.get('/history', (req, res) => {
+    console.log(req.session)
     Meditation.find({}, (err, meditations) => {
         res.render('history.ejs', {
-            
+            user: req.session.user,
             meditations
         })
     })
@@ -67,9 +68,10 @@ meditateRouter.get("/:id/edit", (req, res) => {
 
 // SHOW
 meditateRouter.get('/:id', (req, res) => {
-    Meditation.findById(req.params.id, (err, meditations) => {
+    Meditation.findById(req.params.id, (err, meditation) => {
     res.render('show.ejs', { 
-    meditations, 
+        
+    meditation, 
     index:[req.params.id],
     });
 });
