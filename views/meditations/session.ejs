@@ -1,41 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="/normalize.css" />
     <link rel="stylesheet" href="/skeleton.css" />
     <link rel="stylesheet" href="/style.css">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Manas</h1>
     <h2>Your Daily Dose Of NOW</h2>
     <h3><%=event.date%></h3>
-    <div class="data">
+    <div class="container">
         <form action="/session" method="post">
-        Name:<input type="text" name="name"><br>
-        Date:<input type="date" name="date"><br>
-        Duration:<input type="text" name="duration"><br>
-        Type Of Meditation:  
-        <select name="typeOfMeditation">
-            <option value="Zen">Zen</option>
-            <option value="Vipassana">Vipasaana</option>
-            <option value="Kundalini">Kundalini</option>
-            <option value="Visualization">Visualization</option>
-        </select>  
-        <br>
-        Intention:<input type="text" name="intention"><br>
-        Setting:<input type="text" name="setting"><br>
-        <input type="submit" value="Submit"> 
+            Name: <input type="text" name="name"><br>
+            Date: <input type="date" name="date"><br>
+            Duration:<input type="text" name="duration" placeholder="1 hr : 15 min"><br>
+            Type Of Meditation:
+            <select name="typeOfMeditation">
+                <option value="Zen">Zen</option>
+                <option value="Vipassana">Vipasaana</option>
+                <option value="Kundalini">Kundalini</option>
+                <option value="Visualization">Visualization</option>
+            </select>
+            <br>
+            Intention:<input type="text" name="intention"><br>
+            Setting:<input type="text" name="setting"><br>
+            <input type="submit" value="Submit">
+
         </form>
-        <a href="/session/new">New Session</a>
+
+        <button id="new" onClick="window.location.reload();"> New Session</button>
     </div>
     <div>
-        <button type="button" onclick="start('Hello World!')">Start</button>
-        <button type="button" onclick="start('Hello World!')">Stop</button>
+        <div id="safeTimer">
+            <h2>Timer</h2>
+            <p id="safeTimerDisplay">00:00</p>
+
+        </div>
+        <button id="timer-start" type="button">Start</button>
+        <button id="timer-stop" type="button" onclick="start('Hello World!')">Stop</button>
 
     </div>
+    <script>
+        function startTimer(duration, display) {
+            var timer = duration,
+                minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10)
+                seconds = parseInt(timer % 60, 10);
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = minutes + ":" + seconds;
+                if (++timer > 100000000) {
+                    timer = 0;
+                    // timer = duration; // uncomment this line to reset timer automatically after reaching 0
+                }
+            }, 1000);
+        }
+        window.onload = function () {
+            var time = 0 // your time in seconds here
+            display = document.querySelector('#timerDisplay');
+            startTimer(time, display);
+        };
+    </script>
 </body>
+
 </html>

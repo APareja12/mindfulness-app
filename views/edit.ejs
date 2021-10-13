@@ -11,6 +11,7 @@
 </head>
 <body>
     <h1>Edit Session</h1>
+    <div class="container">
     <form action="/session/history/<%=meditation._id%>?_method=PUT" method="POST">
         Name:<input type="text" name="name" placeholder="<%= meditation.name %>"><br>
         Date:<input type="text" name="date" placeholder="<%= meditation.date %>"><br>
@@ -25,8 +26,8 @@
         <br>
         Intention:<input type="text" name="intention" placeholder="<%= meditation.intention %>"><br>
         Setting:<input type="text" name="setting" placeholder="<%= meditation.setting %>"><br>
-        <input type="submit" value="Submit"> <button action="/session/new">New Session</button>
+        <input type="submit" value="Submit"> 
         </form>
-    
+    </div>
 </body>
 </html>

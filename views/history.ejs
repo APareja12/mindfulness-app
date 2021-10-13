@@ -14,8 +14,8 @@
 <body>
     <h1>History</h1>
     
+    <div class="data">
     <% meditations.forEach(meditation => { %>
-    <div>
       <a href="/session/<%=meditation._id %>">  Date: <%= meditation.date %> <br></a>
       
         <form action="/session/<%=meditation._id %>?_method=DELETE" method="POST">

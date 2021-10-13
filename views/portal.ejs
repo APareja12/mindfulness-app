@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6fc5c678f7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/normalize.css" />
     <link rel="stylesheet" href="/skeleton.css" />
     <link rel="stylesheet" href="/style.css">
     <title>Manas</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <% if(user) { %>
-                <a class="portal" href="/users/logout">Logout</a>
-                <% } else { %>
-                    <a class="portal" href="/users/login">Login</a>
-                    <a class="portal" href="/users/signup">Signup</a>
-                    <% } %>
-                    
-                </nav>
+    <header>        
                 <h1>Manas Meditation App</h1>
     </header>
+    <h4>
+        <% if(user) { %>
+            <a class="portal" href="/users/logout">Logout</a>
+            <% } else { %>
+                <a class="portal" href="/users/login">Login</a>
+                <a class="portal" href="/users/signup">Signup</a>
+                <% } %>
+    </h4>
 </body>
 </html>
