@@ -12,12 +12,12 @@
 <body>
     <h1>Manas</h1>
     <h2>Your Daily Dose Of NOW</h2>
-    <%=event.date%>
-    <div>
+    <h3><%=event.date%></h3>
+    <div class="data">
         <form action="/session" method="post">
         Name:<input type="text" name="name"><br>
-        Date:<input type="text" name="date"><br>
-        Duration:<input type="text" name="duration"><br>
+        Date:<input type="date" name="date"><br>
+        Duration:<input type="time" name="duration"><br>
         Type Of Meditation:  
         <select name="typeOfMeditation">
             <option value="Zen">Zen</option>

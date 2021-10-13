@@ -2,6 +2,7 @@ const express = require('express');
 const meditateRouter = express.Router();
 const Meditation = require("../models/tracker")
 
+
     
     // Index Route
     meditateRouter.get('/', (req, res) => { 
@@ -45,6 +46,7 @@ Meditation.findByIdAndUpdate(
 meditateRouter.get('/history', (req, res) => {
     console.log(req.session)
     Meditation.find({}, (err, meditations) => {
+       console.log(req.session.user)
         res.render('history.ejs', {
             user: req.session.user,
             meditations

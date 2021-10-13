@@ -29,7 +29,7 @@ router.post('/login', (req, res) => {
 
         req.session.user = foundUser._id;
 
-        res.redirect('/session/new')
+        res.redirect('/session')
     });
 });
 
@@ -52,7 +52,7 @@ router.post('/signup', (req, res) => {
 
 router.get('/logout', (req, res) => {
     req.session.destroy(() => {
-        res.redirect('/');
+        res.redirect('/users/login');
     });
 });
 
@@ -68,7 +68,7 @@ router.get('/session', isAuthenticated, (req, res) => {
 // Auth middleware
 function isAuthenticated(req, res, next) {
     if(!req.session.user) { // user is not logged in
-        return res.redirect('/login');
+        return res.redirect('/users/login');
     } 
     next(); // user is authenticated, keep moving on to the next step
 }

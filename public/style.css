@@ -20,17 +20,31 @@ h4 {
     text-align: center;
 }
 
+.data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+form {
+width: 25%;
+justify-content: end;
+
+}
+
+input {
+    width: 300px;
+}
+
 body {
     background-image: url("assets/background.jpg");
-    background-color: black;
+    /* background-color: black; */
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    /* background-position: center; */
    }
 
-.data {
-    display: inline-block;
-}
 .portal {
 
 }

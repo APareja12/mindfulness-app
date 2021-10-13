@@ -16,7 +16,7 @@
     <div class="data">
         <form action="/session" method="post">
         Name:<input type="text" name="name"><br>
-        Date:<input type="text" name="date"><br>
+        Date:<input type="date" name="date"><br>
         Duration:<input type="text" name="duration"><br>
         Type Of Meditation:  
         <select name="typeOfMeditation">
@@ -28,8 +28,9 @@
         <br>
         Intention:<input type="text" name="intention"><br>
         Setting:<input type="text" name="setting"><br>
-        <input type="submit" value="Submit"> <button action="/session/new">New Session</button>
+        <input type="submit" value="Submit"> 
         </form>
+        <a href="/session/new">New Session</a>
     </div>
     <div>
         <button type="button" onclick="start('Hello World!')">Start</button>
