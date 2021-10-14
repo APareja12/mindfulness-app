@@ -31,7 +31,7 @@ app.use(morgan('dev'));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false}));
 app.use(session({
-    secret: 'cknlkclnclnen', // this is used to digitally sign our session cookies (prevents forgery)
+    secret: process.env.SECRET, // this is used to digitally sign our session cookies (prevents forgery)
     resave: false, 
     saveUninitialized: false 
 }));

@@ -13,11 +13,11 @@ Sign up and log in. The home page is your current meditation you will log in. Th
 - MongoDB
 
 # Screenshots
-![screenshot 1](./assets/img/Home_Session_Screenshot.png)
-![screenshot 2](./assets/img/Session_Details_Screenshot.png)
-![screenshot 3](./assets/img/History_Screenshot.png)
-![screenshot 4](./assets/img/Timer_Screenshot.png)
-![screenshot 5](./assets/img/Edit_Screenshot.png)
+![screenshot 1](./public/assets/img/Home_Session_Screenshot.png)
+![screenshot 2](./public/assets/img/Session_Details_Screenshot.png)
+![screenshot 3](./public/assets/img/History_Screenshot.png)
+![screenshot 4](./public/assets/img/Timer_Screenshot.png)
+![screenshot 5](./public/assets/img/Edit_Screenshot.png)
 
 
 # Future Enhancements
