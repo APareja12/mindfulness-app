@@ -159,7 +159,7 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #1EAEDB; }
+  color: #bedfe7; }
 a:hover {
   color: #0FA0CE; }
 
@@ -340,7 +340,8 @@ td:last-child {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 button,
 .button {
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  width: 300px }
 input,
 textarea,
 select,

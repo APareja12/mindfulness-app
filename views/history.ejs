@@ -16,12 +16,12 @@
     
     <div class="data">
     <% meditations.forEach(meditation => { %>
-      <a href="/session/<%=meditation._id %>">  Date: <%= meditation.date %> <br></a>
+      <a id="history-date" href="/session/<%=meditation._id %>">  Date: <%= meditation.date %> <br></a>
       
         <form id="history" action="/session/<%=meditation._id %>?_method=DELETE" method="POST">
             <input class="delete-btn" type="submit" value="DELETE" /> 
         </form>
-        <button onclick="window.location.href='/session'">Back</button>
+        <button id="history-back" onclick="window.location.href='/session'">Back</button>
         
         <% }) %>
     </div>

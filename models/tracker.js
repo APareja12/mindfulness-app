@@ -8,7 +8,7 @@ const trackerSchema = new Schema({
     duration: Number,
     typeOfMeditation: {
         type: String, 
-        enum: ['Zen', 'Vipassana', 'Kundalini', 'Visualization']
+        enum: ['Zen', 'Vipassana', 'Kundalini', 'Visualization', 'Transcendental', 'Mantra', 'Lojong']
         },
     intention: String,
     setting: String,
