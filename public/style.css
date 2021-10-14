@@ -54,11 +54,22 @@ input {
 }
 
 body {
-    background-image: url("assets/background.jpg");
+    background-image: url("/assets/background.jpg");
     /* background-color: black; */
     background-size: cover;
     background-repeat: no-repeat;
     /* background-position: center; */
+}
+
+#history {
+    display: flex;
+    justify-content: center;
+}
+
+.delete-btn[type="submit"] {
+    width: 100px;
+    display: flex;
+    justify-content: center;
 }
 
 #edit {
@@ -71,6 +82,10 @@ body {
 
 #safeTimerDisplay {
     font-size: 50px;
+}
+
+#Timer {
+    align-items: left;
 }
 
 #safeTimer {
