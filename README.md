@@ -11,6 +11,9 @@ Sign up and log in. The home page is your current meditation you will log in. Th
 - HTML, CSS, JavaScript/jQuery
 - Mongoose
 - MongoDB
+- Heroku
+- Node JS
+- Express
 
 # Screenshots
 ![screenshot 1](./public/assets/img/Home_Session_Screenshot.png)

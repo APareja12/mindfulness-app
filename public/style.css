@@ -92,3 +92,10 @@ label {
 #history-back {
     width: 100px;
 }
+
+
+
+@media (max-width: 400px) {
+    background-attachment: fixed;
+}
+
