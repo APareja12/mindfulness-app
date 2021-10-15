@@ -2,7 +2,7 @@
 
 Allows user to track meditation and mindfulness practice. Provides fields for intention, setting, duration, date, and type of meditation.
 
-https://mindfulnessapp.herokuapp.com/
+
 
 # Getting Started
 
@@ -24,10 +24,11 @@ Sign up and log in. The home page is your current meditation you will log in. Th
 ![screenshot 4](./public/assets/img/Timer_Screenshot.png)
 ![screenshot 5](./public/assets/img/Edit_Screenshot.png)
 
+https://mindfulnessapp.herokuapp.com/
 
 # Future Enhancements
 
-- Add a variety of sounscapes 
+- Add a variety of soundscapes 
 - Ability to add up the duration of all sessions combined
 - Option for a guided meditation
 - Goals and affirmations tracker
