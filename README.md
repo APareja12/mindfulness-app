@@ -2,6 +2,8 @@
 
 Allows user to track meditation and mindfulness practice. Provides fields for intention, setting, duration, date, and type of meditation.
 
+https://mindfulnessapp.herokuapp.com/
+
 # Getting Started
 
 Sign up and log in. The home page is your current meditation you will log in. There is a built in timer that you can use to keep track. 
