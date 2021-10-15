@@ -25,6 +25,7 @@ h4 {
     flex-direction: column;
     left: 326px;
 
+
 }
 
 #history-date {
@@ -96,6 +97,12 @@ label {
 
 
 @media (max-width: 400px) {
-    background-attachment: fixed;
+    body { background-attachment: fixed;}
+    .container {left: 0;}
+    #controls { display: flex;}
 }
+
+
+
+
 
